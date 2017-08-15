@@ -23,6 +23,7 @@ class InitOAuth implements InitStep {
   static final String PLUGIN_SECTION = "plugin";
   static final String CLIENT_ID = "client-id";
   static final String CLIENT_SECRET = "client-secret";
+  static final String CALLBACK_URL = "callback-url";
   static final String LINK_TO_EXISTING_OPENID_ACCOUNT = "link-to-existing-openid-accounts";
   static final String FIX_LEGACY_USER_ID = "fix-legacy-user-id";
   static final String DOMAIN = "domain";

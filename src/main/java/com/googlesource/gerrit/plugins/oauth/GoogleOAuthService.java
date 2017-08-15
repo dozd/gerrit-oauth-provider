@@ -69,7 +69,8 @@ class GoogleOAuthService implements OAuthServiceProvider {
       @PluginName String pluginName,
       @CanonicalWebUrl Provider<String> urlProvider) {
     PluginConfig cfg = cfgFactory.getFromGerritConfig(pluginName + CONFIG_SUFFIX);
-    this.canonicalWebUrl = CharMatcher.is('/').trimTrailingFrom(urlProvider.get()) + "/";
+    //    String canonicalWebUrl = CharMatcher.is('/').trimTrailingFrom(urlProvider.get()) + "/";
+    String canonicalWebUrl = CharMatcher.is('/').trimTrailingFrom(cfg.getString(InitOAuth.CALLBACK_URL)) + "/";
     if (cfg.getBoolean(InitOAuth.LINK_TO_EXISTING_OPENID_ACCOUNT, false)) {
       log.warn(
           String.format(
